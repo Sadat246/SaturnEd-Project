@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<a href="http://localhost:8000/homework/cookies">Cookies</a>
+<a class="lower" href="http://localhost:8000/homework/hw_list">See Homework</a> 
+<a class="lower" href="http://localhost:8000/homework/forms"> Add Homework (HTML) </a>
+<a class="lower" href="http://localhost:8000/homework/django_forms"> Add Homework (Django) </a>
+<a class="lower" href="http://localhost:8000/homework/search_form">Search Homework</a>
+<a class="lower" href="http://localhost:8000/homework/list_view">List View</a><br><br>
+
+Look up all the assignments by class: <br><br>
+<form action="" method="post">
+    {% csrf_token %}
+    <label for="class_text">Class</label><br>
+    <input type="text" id="hw_class" name="hw_class"><br>
+    <input type="submit" value="Submit"> 
+</form>
+
+<img src="/static/images/glass.png" alt="glass" width="300" height="300" align="middle">
+<button onclick="document.getElementById('glass').click()">Download!!</button>
+<a id="glass" href="/static/images/glass.png" download hidden></a>
+{% endblock content %}

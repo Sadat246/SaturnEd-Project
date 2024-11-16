@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+Search Results: 
+
+{% if not class_list %}
+<br><br> You do not have any grades for this class!
+
+{% else %}
+    <br><br> This is your grade for the class {{classname}}: <br><br>
+    {% for class in class_list %}
+        {% if class.class_name == classname %}
+            Level: {{class.level}}<br>
+            Grade: {{class.grade}}<br><br>
+        {% endif %}
+    {% endfor %}
+{% endif %}
+
+{% endblock content %}

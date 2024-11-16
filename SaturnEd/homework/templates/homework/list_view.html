@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<h2>Homework List View</h2>
+
+<a href="http://localhost:8000/homework/cookies">Cookies</a>
+<a class="lower" href="http://localhost:8000/homework/hw_list">See Homework</a> 
+<a class="lower" href="http://localhost:8000/homework/forms"> Add Homework (HTML) </a>
+<a class="lower" href="http://localhost:8000/homework/django_forms"> Add Homework (Django) </a>
+<a class="lower" href="http://localhost:8000/homework/search_form">Search Homework</a>
+<a class="lower" href="http://localhost:8000/homework/list_view">List View</a><br><br>
+
+<a href="forms"><button> Add Homework (HTML) </button></a>
+<a href="django_forms"><button> Add Homework (Django) </button></a><br>
+
+{% if not cookies_list %}
+    <br>Add Homework!
+{% else %}
+    <ol>
+        {% for cookie in cookies_list %}
+            <li>
+                Class: {{cookie.class}} <br>
+                Name: {{cookie.name}} <br>
+                Date: {{cookie.date}} <br>
+                {% comment %} <a href="edit_hw"><button> Edit Assignment Details </button></a><br> {% endcomment %}
+                {% comment %} <a href="remove_hw"><button value={{dico}}> Remove Homework </button></a><br> {% endcomment %}
+
+                <form action="" method="POST">
+                    {% csrf_token %}
+                    <input type="hidden" id="class" name="class" value={{cookie.class}} size="100"/>
+                    <input type="hidden" id="name" name="name" value={{cookie.name}} size="100"/>
+                    <input type="hidden" id="date" name="date" value={{cookie.date}} size="100"/>
+                    <input type="submit" name="edit_hw" value="Edit Homework"> 
+                </form>
+
+                <form action="" method="POST">
+                    {% csrf_token %}
+                    <input type="hidden" id="class" name="class" value={{cookie.class}} size="100"/>
+                    <input type="hidden" id="name" name="name" value={{cookie.name}} size="100"/>
+                    <input type="hidden" id="date" name="date" value={{cookie.date}} size="100"/>
+                    <input type="submit" name="remove_hw" value="Remove Homework"> 
+                </form>
+            <br></li>
+        {% endfor %}
+    </ol>
+{% endif %}
+
+{% endblock content %}

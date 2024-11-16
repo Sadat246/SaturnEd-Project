@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<a href="http://localhost:8000/homework/cookies">Cookies</a>
+<a class="lower" href="http://localhost:8000/homework/hw_list">See Homework</a> 
+<a class="lower" href="http://localhost:8000/homework/forms"> Add Homework (HTML) </a>
+<a class="lower" href="http://localhost:8000/homework/django_forms"> Add Homework (Django) </a>
+<a class="lower" href="http://localhost:8000/homework/search_form">Search Homework</a>
+<a class="lower" href="http://localhost:8000/homework/list_view">List View</a><br><br>
+
+{% if not homework_list %}
+<br><br> You do not have any homework for this class!
+
+{% else %}
+    <br><br> These are the homework you have: <br><br>
+    {% for homework in homework_list %}
+        {% if homework.class == hw_class %}
+            Assignment: {{homework.name}}<br>
+            Due Date: {{homework.date}}<br><br>
+        {% endif %}
+    {% endfor %}
+{% endif %}
+
+{% endblock content %}

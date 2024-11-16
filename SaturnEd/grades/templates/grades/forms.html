@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+<form action="" method="post">
+    {% csrf_token %}
+
+    <label for="level">Level:</label><br>
+        <select id='level' name='level' size="3">
+        <option value="Regular">Regular</option>
+        <option value="Honors">Honors</option>
+        <option value="AP">AP</option>
+        </select><br>
+
+    <label for="class_name">Class Name:</label><br>
+    <input type="text" id='class_name' name='class_name'><br>
+    
+    <label for="average_text">Average:</label><br>
+    <input type="text" id='grade' name='grade'><br>
+    <input type="submit" name = "submit_form" value="Submit">
+
+    </form>
+{% endblock content %}

@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ RigorForm.as_p }}
+        <input type="submit" value="Submit">
+    </form>
+{% endblock content %}
+
+
+{% comment %} {% extends "base.html" %}
+
+{% block content %}
+
+   <form action="" method="post">
+       {% csrf_token %}
+       {{ RigorForm.as_p }}
+       <input type="submit" value="Submit">
+   </form>
+
+{% endblock content %} {% endcomment %}

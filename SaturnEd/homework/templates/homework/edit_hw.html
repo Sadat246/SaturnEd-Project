@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<<<<<<< HEAD
+
+<a class="lower" href="http://localhost:8000/homework/cookies">Cookies</a>
+=======
+<a href="http://localhost:8000/homework/cookies">Cookies</a>
+>>>>>>> 760445f2b0916507cb90765a7696efe6c6c9595c
+<a class="lower" href="http://localhost:8000/homework/hw_list">See Homework</a> 
+<a class="lower" href="http://localhost:8000/homework/forms"> Add Homework (HTML) </a>
+<a class="lower" href="http://localhost:8000/homework/django_forms"> Add Homework (Django) </a>
+<a class="lower" href="http://localhost:8000/homework/search_form">Search Homework</a>
+<a class="lower" href="http://localhost:8000/homework/list_view">List View</a><br><br>
+
+<form action="" method="post">
+    {% csrf_token %}
+    <label for="class_text">Class:</label><br>
+    <input type="text" id="class" name="class" size="100" onfocus="this.value=''"/><br>
+    <label for="name_text">Name:</label><br>
+    <input type="text" id="name" name="name" size="100" onfocus="this.value=''"/><br>
+    <label for="date_text">Due Date:</label><br>
+    <input type="text" id="date" name="date" size="100"/><br>
+    <input type="hidden" id="index" name="index" value={{index}}/>
+    <input type="submit" name="update_hw" value="Update Homework"/> <br>
+</form>
+{% endblock content %}

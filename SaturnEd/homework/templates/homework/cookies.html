@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+<a href="http://localhost:8000/homework/cookies">Cookies</a>
+<a class="lower" href="http://localhost:8000/homework/hw_list">See Homework</a> 
+<a class="lower" href="http://localhost:8000/homework/forms"> Add Homework (HTML) </a>
+<a class="lower" href="http://localhost:8000/homework/django_forms"> Add Homework (Django) </a>
+<a class="lower" href="http://localhost:8000/homework/search_form">Search Homework</a>
+<a class="lower" href="http://localhost:8000/homework/list_view">List View</a><br><br>
+
+   This is my cookies page<br><br>
+   You have visited this page {{visit_nbr}} times.<br><br>
+
+   This cookie expires in 30 minutes.
+
+   <img src="/static/images/cookie.png" alt="cookie" width="300" height="300" align="middle">
+    
+   <button onclick="document.getElementById('cookie').click()">Download!!</button>
+   <a id="cookie" href="/static/images/cookie.png" download hidden></a>
+
+{% endblock content %}
+

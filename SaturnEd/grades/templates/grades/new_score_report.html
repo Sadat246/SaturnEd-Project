@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<h2>Score Report</h2><br>
+
+{% if not class_list %}
+    Add your classes!
+{% endif %}
+<br>
+
+<ol>
+{% for cookie in cookies_list %}
+{% comment %} {% for in class_list %} {% endcomment %}
+<li>
+    Class: {{ cookie.class_name }} <br>
+    Level: {{ cookie.level }} <br>
+    Grade: {{ cookie.grade }} <br>
+    
+    {% comment %} <form action="" method="post">
+      {% csrf_token %}
+      
+      <button>Edit</button>
+    </a>
+      <input type="hidden" id="class_name" name="class_name" value={{cookie.class_name}} size="100"/>
+      <input type="hidden" id="grade" name="grade" value={{cookie.grade}} size="100"/>
+      <input type="hidden" id="level" name="level" value={{cookie.level}} size="100"/>
+      <a href="../edit">
+      <input type="submit" name="edit" value="Edit"> 
+  </form>
+    <a> {% endcomment %}
+      <form action="" method="post">
+        {% csrf_token %}
+        <input type="hidden" id="class_name" name="class_name" value={{cookie.class_name}} size="100"/>
+        <input type="hidden" id="grade" name="grade" value={{cookie.grade}} size="100"/>
+        <input type="hidden" id="level" name="level" value={{cookie.level}} size="100"/>
+        <input type="submit" name="delete" value="Delete"> 
+    </form>
+    </a>
+</li>
+{% endfor %}
+</ol>
+<br>
+
+<a href="../forms/">
+    <button>Add Class (HTML) </button>
+  </a>
+
+<a href="../new_forms/">
+    <button>Add Class (Django) </button>
+  </a><br>
+
+  <a href="../finder/">
+    <button>Search Class </button>
+  </a><br><br>
+{% endblock content %}

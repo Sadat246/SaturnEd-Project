@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+<form action="" method="post">
+    {% csrf_token %}
+    <label for="class_text">Class Search:</label><br>
+    <input type="text" id="clasnames" name="classname"><br>
+    <input type="submit" value="Submit"> 
+</form>
+{% endblock content %}

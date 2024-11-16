@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<h1>Welcome to the instructions page</h1>
+<p>For this application, you can use one of the two forms, and then you should input all of your grades. You can write your class name, class level between regular, AP, and Honors, as well as your grade in the class. After you fill everything out and press submit, your grades will be displayed and your weighted average will be calculated!</p>
+<img src="/static/images/smile.png" alt="poster" width="300" height="300" align="middle">
+    
+<button onclick="document.getElementById('link').click()">Download Image!</button>
+<a id="link" href="/static/images/smile.png" download hidden></a>
+
+ 
+{% endblock content %}
+

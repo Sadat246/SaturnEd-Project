@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block content %}
+
+<div class="subtitle">
+    Click on "Grades" to redirect yourself to the Grade Calculator OR Click on "Homework" to return to the Homework home page. <br><br>
+    Click on "See Homework" to view all your upcoming assignments OR Click on "Remove Homework" to check off a completed homework. <br>
+    </div>
+ 
+<div class="menu"><a href="http://localhost:8000/grades/cookies">Cookies</a>
+    <a href="http://localhost:8000/grades/instructions"> Instructions </a> 
+    <a href="http://localhost:8000/grades/forms">Input Grades (HTML) </a>
+    <a href="http://localhost:8000/grades/new_forms"> Input Grades (Django)</a>
+    <a href="http://localhost:8000/grades/new_score_report"> Score Report </a>
+</div>
+{% endblock content %}
